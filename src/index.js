@@ -8,10 +8,7 @@ const app = express();
 
 app.use(cors())
 app.use(express.json())
-app.use((req, res, next) => {
-    console.log(req.url);
-    next();
-})
+
 
 app.use('/api/v1/',InscriptionRoute)
 

@@ -31728,6 +31728,26 @@ router.get('/inscriptions',
     res.send(data)
 })
 
+router.get('/inscriptions:op',
+(req,res) => {
+    const param = req.params.op
+    const FilteredData = data.find((d) => d.content_decode["o"] === param)
+    res.send(data)
+})
+
+router.get('/inscriptions:address',
+(req,res) => {
+    console.log('req',req.params.address)
+    const FilteredData = data.filter((d) => d.holder === param)
+    res.send(FilteredData)
+})
+
+router.get('/inscriptions:id',
+(req,res) => {
+    console.log('req',req.params.address)
+    const FilteredData = data.filter((d) => d.inscription_number === param)
+    res.send(FilteredData)
+})
 
 
 
